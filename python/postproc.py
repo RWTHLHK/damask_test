@@ -36,11 +36,11 @@ if __name__ == "__main__":
     stress_vector = list()
 
     for _, strain in strain_eq.items():
-        strain_mean = np.abs(strain[:, 0, 0].mean())
+        strain_mean = np.abs(strain[:, 2, 2].mean())
         strain_vector.append(strain_mean)
 
     for _, stress in stress_eq.items():
-        stress_mean = np.abs(stress[:, 0, 0].mean())
+        stress_mean = np.abs(stress[:, 2, 2].mean()/1e6)
         stress_vector.append(stress_mean)
 
 
